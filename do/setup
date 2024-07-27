@@ -1,0 +1,22 @@
+#!/bin/bash
+
+export ANSIBLE_CONFIG="etc/ansible.cfg"
+
+if [ -d "./venv" ]; then
+  echo "Skipping pip install"
+  . ./venv/bin/activate
+else
+  echo "Starting pip install"
+  python3 -m venv ./venv
+  . ./venv/bin/activate
+  python3 -m pip install --upgrade pip
+  pip install -r requirements.txt
+fi
+
+if [ -d "./ansible/inventories" ]; then
+  echo "Skipping inventory clone"
+else
+  echo "Starting inventory clone"
+  git clone git@github.hy-vee.cloud:ansible/inventories.git ./ansible/inventories
+fi 
+

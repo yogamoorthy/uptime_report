@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: Yagamoorthy S
+  description: Gathers uptime status and send report.
+  license: MIT
+  platforms:
+  - name: Redhat, SUSE, CentOS, Debian
+  categories:
+  - system

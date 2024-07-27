@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export ANSIBLE_CONFIG="etc/ansible.cfg"
+
+test -s ./ansible/etc/vault_pass.txt
+vpassRC=$(echo $?)
+
+hostname -f
+pwd
+
+if [ "$vpassRC" -eq "0" ]; then
+  echo "Info: Vault password file is populated"
+elif [ "$vpassRC" -eq "1" ]; then
+  echo "Error: Vault password file is empty"
+else
+  echo "Warning: Not sure what you did but, you should probably stop."
+fi

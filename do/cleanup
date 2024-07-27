@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -fr ./ansible/inventories
+rm -fr ./venv
+rm -f ./ansible/etc/vault_pass.txt
+rm -f ./ansible/etc/id_rsa

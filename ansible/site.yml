@@ -1,0 +1,9 @@
+---
+- hosts: linux
+  gather_facts: true
+
+- hosts: linux
+  gather_facts: false
+  roles:
+    - role: uptime_report
+...
